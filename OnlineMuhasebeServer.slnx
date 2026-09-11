@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="OnlineMuhasebeServer.WebApi/OnlineMuhasebeServer.WebApi.csproj" Id="58b4df73-be7c-4fbd-8a6b-381ce0779c95" />
+  </Folder>
+  <Folder Name="/src/Core/">
+    <Project Path="D:/MyProjects/OnlineMuhasebeServer/OnlineMuhasebeServer.Application/OnlineMuhasebeServer.Application.csproj" Id="257b8de1-2ecc-45a0-8b2c-cd8b3258a826" />
+    <Project Path="OnlineMuhasebeServer.Domain/OnlineMuhasebeServer.Domain.csproj" Id="c63e76a7-9608-4ab8-8f42-77a4ace00287" />
+  </Folder>
+  <Folder Name="/src/External/">
+    <Project Path="OnlineMuhasebeServer.Infrastructure/OnlineMuhasebeServer.Infrastructure.csproj" Id="08246ace-c626-4b83-a972-ffa38903ef95" />
+    <Project Path="OnlineMuhasebeServer.Persistance/OnlineMuhasebeServer.Persistance.csproj" Id="1acd6129-f822-4729-8c0f-db20c4154193" />
+    <Project Path="OnlineMuhasebeServer.Presentation/OnlineMuhasebeServer.Presentation.csproj" Id="5338673e-5baa-417e-9a3a-e10e5100f7e2" />
+  </Folder>
+  <Folder Name="/test/" />
+</Solution>
