@@ -12,7 +12,7 @@ namespace OnlineMuhasebeServer.Persistance.Context
         }
 
         public DbSet<Company> Companies { get; set; }
-        public DbSet<UserAndCompanyRelationship> userAndCompanyRelationships { get; set; }
+        public DbSet<UserAndCompanyRelationship> UserAndCompanyRelationships { get; set; }
 
     }
 }
