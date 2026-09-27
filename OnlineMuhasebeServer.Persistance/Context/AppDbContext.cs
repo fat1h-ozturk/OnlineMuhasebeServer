@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using OnlineMuhasebeServer.Domain.Abstractions;
 using OnlineMuhasebeServer.Domain.AppEntities;
 using OnlineMuhasebeServer.Domain.AppEntities.Identity;
@@ -21,15 +22,13 @@ namespace OnlineMuhasebeServer.Persistance.Context
 
             foreach (var entry in entries)
             {
-                if(entry.State == EntityState.Added)
+                if (entry.State == EntityState.Added)
                 {
-                    entry.Property(p => p.Id)
-                        .CurrentValue = Guid.NewGuid().ToString();
                     entry.Property(p => p.CreatedDate)
                         .CurrentValue = DateTime.Now;
                 }
 
-                if(entry.State == EntityState.Modified)
+                if (entry.State == EntityState.Modified)
                 {
                     entry.Property(p => p.UpdateDate)
                         .CurrentValue = DateTime.Now;
@@ -37,6 +36,16 @@ namespace OnlineMuhasebeServer.Persistance.Context
             }
 
             return base.SaveChangesAsync(cancellationToken);
+        }
+
+        public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
+        {
+            public AppDbContext CreateDbContext(string[] args)
+            {
+                var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
+                optionsBuilder.UseSqlServer("Server=localhost;Database=MuhasebeMasterDb;Trusted_Connection=True;TrustServerCertificate=True;");
+                return new AppDbContext(optionsBuilder.Options);
+            }
         }
     }
 }
